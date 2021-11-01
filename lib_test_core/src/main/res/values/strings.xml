@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">test_core</string>
+    <string name="accessibility_desc">自动化测试脚本</string>
+</resources>
