@@ -60,7 +60,7 @@ public static boolean performAutoSlide(AccessibilityNodeInfo nodeInfo, boolean d
 5.输入文本
 
 ```java
-inputAutoText(AccessibilityNodeInfo nodeInfo, String text) {
+public static boolean inputAutoText(AccessibilityNodeInfo nodeInfo, String text) 
 ```
 
 ### 一些全局操作 
