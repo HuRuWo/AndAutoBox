@@ -1,5 +1,7 @@
 package com.huruwo.lib_test_core.tools;
 
+import static com.huruwo.lib_test_core.tools.ActionNode.mAS;
+
 import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.huruwo.lib_test_core.TestAccessibilityService;
@@ -10,24 +12,16 @@ import java.util.concurrent.ExecutionException;
 
 public class FindNode {
 
-    TestAccessibilityService accService;
 
-    public FindNode() {
-        accService = TestAccessibilityService.getmAccessibilityService();
-        if(accService==null){
-            throw  new RuntimeException("AccessibilityService Exception");
-        }
-    }
-
-    public AccessibilityNodeInfo findRootNode(){
-        if(accService!=null) {
-            return accService.getRootInActiveWindow();
+    public static AccessibilityNodeInfo findRootNode(){
+        if(mAS!=null) {
+            return mAS.getRootInActiveWindow();
         }else {
             return null;
         }
     }
 
-    public List<AccessibilityNodeInfo> findNodeListByText(String text){
+    public static List<AccessibilityNodeInfo> findNodeListByText(String text){
         AccessibilityNodeInfo root = findRootNode();
         if(root!=null){
               return root.findAccessibilityNodeInfosByText(text);
@@ -36,7 +30,7 @@ public class FindNode {
         }
     }
 
-    public List<AccessibilityNodeInfo> findNodeListByViewId(String viewId){
+    public static List<AccessibilityNodeInfo> findNodeListByViewId(String viewId){
         AccessibilityNodeInfo root = findRootNode();
         if(root!=null){
             return root.findAccessibilityNodeInfosByViewId(viewId);
@@ -45,7 +39,7 @@ public class FindNode {
         }
     }
 
-    public List<AccessibilityNodeInfo> findNodeListByViewIdText(String viewId,String text){
+    public static List<AccessibilityNodeInfo> findNodeListByViewIdText(String viewId,String text){
         AccessibilityNodeInfo root = findRootNode();
         if(root!=null){
             List<AccessibilityNodeInfo> nodeInfos =  findNodeListByViewId(viewId);
@@ -62,7 +56,7 @@ public class FindNode {
     }
 
 
-    public AccessibilityNodeInfo findNodeByText(String text,int index){
+    public static AccessibilityNodeInfo findNodeByText(String text,int index){
         AccessibilityNodeInfo root = findRootNode();
         if(root!=null){
             List<AccessibilityNodeInfo> nodeInfos =  findNodeListByText(text);
@@ -73,7 +67,7 @@ public class FindNode {
         return null;
     }
 
-    public AccessibilityNodeInfo findNodeByViewId(String viewId,int index){
+    public static AccessibilityNodeInfo findNodeByViewId(String viewId,int index){
         AccessibilityNodeInfo root = findRootNode();
         if(root!=null){
             List<AccessibilityNodeInfo> nodeInfos =  findNodeListByViewId(viewId);
@@ -84,7 +78,7 @@ public class FindNode {
         return null;
     }
 
-    public AccessibilityNodeInfo findNodeByViewIdText(String viewId,String text,int index){
+    public static AccessibilityNodeInfo findNodeByViewIdText(String viewId,String text,int index){
         AccessibilityNodeInfo root = findRootNode();
         if(root!=null){
             List<AccessibilityNodeInfo> nodeInfos =  findNodeListByViewIdText(viewId,text);

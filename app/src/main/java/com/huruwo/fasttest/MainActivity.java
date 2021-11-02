@@ -1,6 +1,7 @@
 package com.huruwo.fasttest;
 
 import static com.huruwo.lib_test_core.tools.ActionNode.actionPause;
+import static com.huruwo.lib_test_core.tools.ActionNode.mAS;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static boolean isAccessibilitySettingsOn() {
-        if (TestAccessibilityService.mAccessibilityService != null) {
+        if (mAS!= null) {
             return true;
         }
         return false;

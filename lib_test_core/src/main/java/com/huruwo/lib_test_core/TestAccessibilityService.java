@@ -5,7 +5,6 @@ import android.view.accessibility.AccessibilityEvent;
 
 public class TestAccessibilityService extends AccessibilityService {
 
-    public static TestAccessibilityService mAccessibilityService;
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
@@ -20,11 +19,8 @@ public class TestAccessibilityService extends AccessibilityService {
     @Override
     public void onCreate() {
         super.onCreate();
-        mAccessibilityService = this;
+        com.huruwo.lib_test_core.tools.ActionNode.mAS = this;
     }
 
-    public static TestAccessibilityService getmAccessibilityService() {
-        return mAccessibilityService;
-    }
 
 }
