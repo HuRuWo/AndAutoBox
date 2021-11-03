@@ -129,11 +129,10 @@ public class ActionNode {
 
         AccessibilityNodeInfo info = FindNode.findNodeByViewId(viewId, index);
         if(info!=null){
-
+           return inputAutoText(info,content);
         }
         return false;
     }
-
 
     public static boolean inputAutoText(AccessibilityNodeInfo nodeInfo, String text) {
 

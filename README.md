@@ -54,7 +54,7 @@ public static boolean performAutoDoubleClick(AccessibilityNodeInfo nodeInfo)
 不建议使用这个滑动 很怪 还是基于GestureDescription的path滑动好用
 
 ```java
-public static boolean performAutoSlide(AccessibilityNodeInfo nodeInfo, boolean direction) {
+public static boolean performAutoSlide(AccessibilityNodeInfo nodeInfo, boolean direction) 
 ```
 
 5.输入文本
@@ -93,9 +93,39 @@ GestureDescription支持path和持续时间
 #### 1.点击任意位置point
 
 
+```
+public static boolean useGestureClickPoint(Point point)
+```
+
+
 #### 2.点击控件的中心
 
 基于点击任意位置操作 可以点击任意控件，我们先找到控件的中心就行
+
+```java
+Rect rect = new Rect();
+info.getBoundsInScreen(rect);
+useGestureClickPoint(new Point(rect.centerX(), rect.centerY()));
+```
+
+#### 3.进阶演示基于path的操作
+
+##### 1.miui三指截屏
+
+
+
+##### 2.画布上绘制五边形
+
+
+### 针对无id控件的优化
+
+对于 webview 和 flutter 等框架做起来的view界面，会由于缺少对应的ViewId导致难以定位。
+
+为此我们只能通过几种方式来确定:
+
+#### 1.文本文字确定
+
+### 2.控件层次确定
 
 
 
