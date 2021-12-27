@@ -31,19 +31,19 @@
 
 ### 支持的Auto操作
 
-1.单击
+1.点击事件 传入类型
 
 ```java
 public static boolean actionClickNode(String viewId,String text,int index,ClickAction clickAction,long sleep)
 ```
 
-2.双击
+2.单击
 
 ```java
 public static boolean performAutoClick(AccessibilityNodeInfo nodeInfo)
 ```
 
-3.长按
+3.双击
 
 ```java
 public static boolean performAutoDoubleClick(AccessibilityNodeInfo nodeInfo)
@@ -111,8 +111,6 @@ useGestureClickPoint(new Point(rect.centerX(), rect.centerY()));
 #### 3.进阶演示基于path的操作
 
 ##### 1.miui三指截屏
-
-
 
 ##### 2.画布上绘制五边形
 
